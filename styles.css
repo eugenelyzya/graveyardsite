@@ -70,9 +70,9 @@ a {
 
 .hero::before {
   background:
-    radial-gradient(circle at 70% 28%, rgba(79, 224, 255, 0.18), transparent 20%),
-    radial-gradient(circle at 24% 36%, rgba(255, 91, 143, 0.2), transparent 18%),
-    linear-gradient(180deg, rgba(11, 8, 18, 0.1) 0%, rgba(11, 8, 18, 0.6) 100%);
+    radial-gradient(circle at 70% 28%, rgba(79, 224, 255, 0.28), transparent 20%),
+    radial-gradient(circle at 24% 36%, rgba(255, 91, 143, 0.26), transparent 18%),
+    linear-gradient(180deg, rgba(11, 8, 18, 0.02) 0%, rgba(11, 8, 18, 0.18) 100%);
 }
 
 .topbar {
@@ -98,6 +98,7 @@ a {
 .brand,
 .topbar-links a {
   font-size: 0.82rem;
+  font-weight: 800;
 }
 
 .brand {
@@ -132,6 +133,7 @@ a {
   margin: 0 0 14px;
   color: var(--lime);
   font-size: 0.82rem;
+  font-weight: 800;
 }
 
 h1,
@@ -145,17 +147,20 @@ h1 {
   max-width: 820px;
   font-size: clamp(3.4rem, 8vw, 7rem);
   line-height: 0.95;
+  font-weight: 800;
 }
 
 h2 {
   max-width: 980px;
   font-size: clamp(2rem, 4.8vw, 4rem);
   line-height: 1.05;
+  font-weight: 800;
 }
 
 h3 {
   font-size: 1.2rem;
   line-height: 1.2;
+  font-weight: 700;
 }
 
 .tagline,
@@ -171,6 +176,7 @@ h3 {
 .tagline {
   max-width: 760px;
   margin: 24px 0 0;
+  font-weight: 500;
 }
 
 .hero-actions {
@@ -228,6 +234,8 @@ h3 {
   align-self: center;
   padding: 28px 0 28px 28px;
   border-left: 1px solid var(--line);
+  background: rgba(10, 8, 16, 0.18);
+  border-radius: 20px;
 }
 
 .hero-side-title {
@@ -256,11 +264,43 @@ h3 {
 }
 
 .hero .eyebrow,
-.hero .tagline,
-.hero-side p,
 .hero .topbar-links a,
 .hero .brand {
   color: #ffffff;
+}
+
+.hero h1 {
+  max-width: 980px;
+  font-size: clamp(2rem, 4.8vw, 4rem);
+  line-height: 1.05;
+  font-weight: 800;
+  font-family: "Cinzel", serif;
+  color: var(--text);
+}
+
+.hero .tagline,
+.hero .hero-side p,
+.hero .hero-highlights li,
+.hero .hero-runes span,
+.hero .eyebrow,
+.hero .hero-side-title {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--muted);
+}
+
+.hero .hero-side-title {
+  font-family: "Manrope", sans-serif;
+  font-weight: 400;
+  margin: 0 0 16px;
+}
+
+.hero .eyebrow,
+.hero .hero-highlights li,
+.hero .hero-runes span {
+  text-transform: none;
+  letter-spacing: 0;
+  font-weight: 400;
 }
 
 .section {
@@ -276,14 +316,68 @@ h3 {
 
 .section-trailer::before {
   background:
-    radial-gradient(circle at 84% 20%, rgba(79, 224, 255, 0.12), transparent 18%),
-    linear-gradient(180deg, rgba(17, 14, 28, 0.4) 0%, rgba(17, 14, 28, 0.15) 100%);
+    radial-gradient(circle at 84% 20%, rgba(79, 224, 255, 0.2), transparent 18%),
+    linear-gradient(180deg, rgba(17, 14, 28, 0.08) 0%, rgba(17, 14, 28, 0.04) 100%);
 }
 
 .section-gallery::before {
   background:
     radial-gradient(circle at 20% 20%, rgba(255, 91, 143, 0.1), transparent 20%),
     linear-gradient(180deg, rgba(154, 123, 255, 0.06) 0%, rgba(13, 11, 20, 0.04) 100%);
+}
+
+.hero,
+.section-story,
+.section-gallery {
+  color: #ffffff;
+}
+
+.hero-copy,
+.hero-side {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-copy {
+  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.35);
+}
+
+.hero .eyebrow,
+.hero .tagline,
+.hero .hero-side-title,
+.hero .hero-side p,
+.hero .hero-highlights li,
+.hero .hero-runes span,
+.hero .topbar-links a,
+.hero .brand,
+.hero h1,
+.section-story .eyebrow,
+.section-story h2,
+.section-story h3,
+.section-story .story-text p,
+.section-story .story-features p,
+.section-gallery .eyebrow,
+.section-gallery h2,
+.section-gallery .gallery-status,
+.section-gallery .gallery-button {
+  color: #ffffff !important;
+}
+
+.hero .tagline,
+.hero .hero-side p {
+  opacity: 1 !important;
+}
+
+.section-story .story-text p,
+.section-story .story-features p,
+.section-gallery .gallery-status {
+  font-weight: 500;
+}
+
+.section-story .story-features article,
+.section-story .story-features,
+.hero .hero-side {
+  border-color: rgba(255, 255, 255, 0.18);
 }
 
 .section-footer::before {
@@ -334,9 +428,9 @@ h3 {
 .video-shell {
   overflow: hidden;
   border-radius: 28px;
-  border: 1px solid rgba(79, 224, 255, 0.16);
+  border: 1px solid rgba(79, 224, 255, 0.28);
   box-shadow: var(--shadow);
-  background: #08060d;
+  background: #0f0b18;
 }
 
 .video-shell iframe {
@@ -352,6 +446,19 @@ h3 {
 
 .video-note a {
   color: var(--cyan);
+}
+
+.section-trailer,
+.section-trailer .eyebrow,
+.section-trailer h2,
+.section-trailer .video-note,
+.section-trailer .video-note a {
+  color: #ffffff !important;
+}
+
+.section-trailer .video-note {
+  opacity: 1 !important;
+  font-weight: 500;
 }
 
 .gallery-top {
@@ -491,4 +598,39 @@ h3 {
   .hero-layout {
     padding-top: 54px;
   }
+}
+
+/* Force hero typography to match the second section references exactly. */
+.hero h1 {
+  font-family: "Cinzel", serif !important;
+  font-size: clamp(2rem, 4.8vw, 4rem) !important;
+  line-height: 1.05 !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  max-width: 980px !important;
+}
+
+.hero .eyebrow,
+.hero .tagline,
+.hero .hero-side-title,
+.hero .hero-side p,
+.hero .hero-highlights li,
+.hero .hero-runes span {
+  font-family: "Manrope", sans-serif !important;
+  font-size: 1.05rem !important;
+  line-height: 1.9 !important;
+  font-weight: 500 !important;
+  color: #ffffff !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+}
+
+.hero .eyebrow,
+.hero .hero-side-title,
+.hero .hero-highlights li,
+.hero .hero-runes span,
+.hero .topbar-links a,
+.hero .brand {
+  font-weight: 800 !important;
+  color: #ffffff !important;
 }
